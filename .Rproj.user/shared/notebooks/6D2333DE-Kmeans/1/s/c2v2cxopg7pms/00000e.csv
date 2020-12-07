@@ -1,0 +1,32 @@
+"0","walk(csv_files$id, ~ drive_download(as_id(.x)))
+"
+"2","File downloaded:
+  * SVsensor.csv
+Saved locally as:
+  * SVsensor.csv
+"
+"2","File downloaded:
+  * sensor-yuan-108 jumps.csv
+Saved locally as:
+  * sensor-yuan-108 jumps.csv
+"
+"2","File downloaded:
+  * Yurui Wang sensor.csv
+Saved locally as:
+  * Yurui Wang sensor.csv
+"
+"2","File downloaded:
+  * Jingshu_Jump sensor.csv
+Saved locally as:
+  * Jingshu_Jump sensor.csv
+"
+"2","File downloaded:
+  * Manrui Zhang sensor.csv
+Saved locally as:
+  * Manrui Zhang sensor.csv
+"
+"2","File downloaded:
+  * sensor.csv
+Saved locally as:
+  * sensor.csv
+"

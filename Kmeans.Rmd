@@ -1,0 +1,37 @@
+---
+title: "Assignment 6"
+output: html_document
+---
+
+Set-up
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Libraries
+```{r}
+library(tidyverse) #to clean and perp data
+library(tidymodels) # to access some of the tidy model tools
+library(janitor) # to clean data
+library(googledrive)#to get files from google drive
+```
+
+
+#Task II: K-means
+
+Dowloading files
+```{r}
+#using googledrive to download files from Google Drive
+folder_url <- "https://drive.google.com/drive/folders/1am3wIQPXFvvFAmsJG2m85HLl0G63rJE4?usp=sharing" 
+folder <- drive_get(as_id(folder_url))
+csv_files <- drive_ls(folder, type = "csv")
+walk(csv_files$id, ~ drive_download(as_id(.x)))
+```
+Combining the files
+```{r}
+sensor_list <- list.files(pattern="*.csv")#creating a list of sensor files
+FP <- getwd()#get working directory to combine files
+SD <- sensor_list %>% map_dfr(read_csv, .id = "WD") %>% group_by(WD) %>% mutate(id=cur_group_id()) #combine all files
+SD1 <- SD %>% filter(time<=60)#filtering out all data above the minute mark (60 seconds)
+```
+

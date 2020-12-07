@@ -1,0 +1,5 @@
+"0","library(tidyverse) #to clean and perp data"
+"0","library(tidymodels) # to access some of the tidy model tools"
+"0","library(janitor) # to clean data"
+"0","library(googledrive) #to get files from google drive"
+"2","package ‘googledrive’ was built under R version 4.0.3"

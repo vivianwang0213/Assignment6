@@ -1,0 +1,64 @@
+"0","sensor_list <- list.files(pattern=""*.csv"")#creating a list of sensor files"
+"0","FP <- getwd()#get working directory to combine files"
+"0","SD <- sensor_list %>% map_dfr(read_csv, .id = ""WD"") %>% group_by(WD) %>% mutate(id=cur_group_id()) #combine all files"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"2","
+[36m--[39m [1m[1mColumn specification[1m[22m [36m----------------------------------------------------------------------------------------------------------------------------[39m
+cols(
+  time = [32mcol_double()[39m,
+  wx = [32mcol_double()[39m,
+  wy = [32mcol_double()[39m,
+  wz = [32mcol_double()[39m
+)
+
+"
+"0","SD1 <- SD %>% filter(time<=60)#filtering out all data above the minute mark (60 seconds)"

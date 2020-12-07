@@ -1,0 +1,26 @@
+{
+    "id": "BB28B89B",
+    "path": "~/GitHub/Assignment6/Kmeans.Rmd",
+    "project_path": "Kmeans.Rmd",
+    "type": "r_markdown",
+    "hash": "3916752738",
+    "contents": "",
+    "dirty": false,
+    "created": 1607380887814.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "23,30",
+        "scrollLine": "11",
+        "last_setup_crc32": "8885A061c4e2d899"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1607384856,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1607384856173,
+    "read_only": false,
+    "read_only_alternatives": []
+}
