@@ -1,0 +1,79 @@
+---
+title: "final"
+author: "Cy"
+date: "12/9/2020"
+output: html_document
+---
+#Task III
+- Devise five questions on a five point Likert scale that ask members of your group about their experience with your chosen task
+- Collect data from all members of your group
+- Run a PCA analysis on the data
+- What does PC1 represent in your analysis?
+- Visualize the PC1 results for each member of your group
+#Libraries
+```{r}
+library(ggplot2)
+library(GGally)
+library(factoextra)
+library(dplyr)
+```
+
+#Data import
+```{r}
+S1 = read.csv("surveydata.csv", header = T)
+```
+
+#Visualize correlations
+```{r}
+ggpairs(S1, 2:6, progress = FALSE)
+ggcorr(S1[,-1], method = c("everything", "pearson"))
+```
+
+#PCA
+```{r}
+drop <- c("Name")
+S2 <- S1[,!(names(S1) %in% drop)]
+pcas <- prcomp(S2, scale. = TRUE)
+
+pcas$sdev
+
+#To convert this into variance accounted for we can square it, these numbers are proportional to the eigenvalue
+
+pcas$sdev^2
+
+#A summary of our pca will give us the proportion of variance accounted for by each component
+
+summary(pcas)
+
+#We can look at this to get an idea of which components we should keep and which we should drop
+
+plot(pcas, type = "lines",ylim=c(0,3))
+
+
+pcas$rotation
+
+loadings <- abs(pcas$rotation) #abs() will make all eigenvectors positive
+
+head(summary(pcas))
+
+V1 = pcas$x
+V2 <- V1
+rownames(V2)<-S1$Name
+V3 <- as.data.frame(V2)
+names <- c("Sara","Yuan","Yurui","Jingshu","Jie","Shuyi","Manrui","Xingyi")
+barplot(V3$PC1, ylab = "Each member's score on PC1", ylim=c(-4,4), names.arg=names, cex.names=1)
+```
+
+#What PC1 represents
+
+PC1
+Q1..How.comfortable.your.feel.jumping...1...not.comfortable.at.all..5...very.comfortable.                                                                                0.52902674
+Q2.How.often.you.add.jumps.to.your.workout...1.not.at.all..5..very.frequent.                                                                                             0.30168028
+Q3..How.tired.you.felt.after.jumping...1.very.tired..5..not.tired.at.all.                                                                                               -0.01970875
+Q4..Do.you.think.you.are.in.good.physical.shape....1.I.am.an.expert.couch.potato...5..I.can.run.a.marathon.tomorrow.                                                     0.56383739
+Q5..How.often.do.you.exercise...5.almost.every.day..4.once.or.twice.a.week..3.once.or.twice.a.month..2.once.or.twice.three.months..1.once.or.twice.half.a.year.or.less.  0.55751114
+
+#Answer: According to the eigenvectors above, PC1 = 0.529*Q1 + 0.302*Q2 + (-0.020)*Q3 + 0.564*Q4 + 0.558*Q5. In particular, question 1, 2, 3, and 5 have a weight of at least +/- 0.25, which is a noticeable contribution to this principal component. Based on the what those four questions ask, PC1 can be considered a construct of "body-training management and preference to jumping activities". 
+
+
+
