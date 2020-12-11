@@ -1,0 +1,7 @@
+"0","KT <- SD3 %>% select(5:6)"
+"0","Kmeans <- kmeans(KT, 3)"
+"0","Clust <- augment(Kmeans,KT)"
+"0","p1 <- "
+"0","  ggplot(Clust, aes(x =.fittedPC1 , y =.fittedPC2)) +"
+"0","  geom_point(aes(color = .cluster), alpha = 0.8, size=1.5*(SD1$wx))"
+"0","p1"

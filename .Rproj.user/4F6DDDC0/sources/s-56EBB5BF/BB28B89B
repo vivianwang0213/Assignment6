@@ -3,7 +3,7 @@
     "path": "~/GitHub/Assignment6/Kmeans.Rmd",
     "project_path": "Kmeans.Rmd",
     "type": "r_markdown",
-    "hash": "3916752738",
+    "hash": "3464110016",
     "contents": "",
     "dirty": false,
     "created": 1607380887814.0,
@@ -11,16 +11,16 @@
     "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "23,30",
-        "scrollLine": "11",
-        "last_setup_crc32": "8885A061c4e2d899"
+        "cursorPosition": "59,57",
+        "scrollLine": "50",
+        "last_setup_crc32": "56EBB5BFc4e2d899"
     },
     "folds": "",
-    "lastKnownWriteTime": 1607384856,
+    "lastKnownWriteTime": 1607646566,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1607384856173,
+    "last_content_update": 1607646566532,
     "read_only": false,
     "read_only_alternatives": []
 }
