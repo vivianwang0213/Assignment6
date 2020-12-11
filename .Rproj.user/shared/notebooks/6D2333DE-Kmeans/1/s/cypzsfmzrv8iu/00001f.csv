@@ -1,5 +1,5 @@
 "0","KT <- SD3 %>% select(5:6)"
-"0","Kmeans <- kmeans(KT, 3)"
+"0","Kmeans <- kmeans(KT, 4)"
 "0","Clust <- augment(Kmeans,KT)"
 "0","p1 <- "
 "0","  ggplot(Clust, aes(x =.fittedPC1 , y =.fittedPC2)) +"

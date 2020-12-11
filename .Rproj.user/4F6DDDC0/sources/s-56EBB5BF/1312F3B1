@@ -1,0 +1,32 @@
+{
+    "id": "1312F3B1",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1607653176920.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "Taks2_outcomes",
+        "caption": "Taks2_outcomes",
+        "totalObservations": "7",
+        "displayedObservations": "7",
+        "variables": "4",
+        "cacheKey": "9708813D",
+        "object": "Taks2_outcomes",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=Taks2_outcomes&cache_key=9708813D&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1607652485,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1607653176920,
+    "read_only": false,
+    "read_only_alternatives": []
+}

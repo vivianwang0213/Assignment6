@@ -1,0 +1,3 @@
+"0","Outcomes <- Assignment_6_Outcome_data %>% slice(-8)"
+"0","Taks2_outcomes <- augment(Kmeans,Outcomes)"
+"0",""
