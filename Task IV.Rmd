@@ -1,0 +1,25 @@
+---
+title: "task IV"
+author: "Yurui Wang"
+date: "12/13/2020"
+output: html_document
+---
+
+```{r}
+# We'll choose PC1 as the predictor of the jumping score for each member. The higher score one gets on PC1, the more jumps s/he is likely to do in one minute.
+#Reason: As illustrated in task III, PC1 is a construct of body-training management and preference to jumping activities. The higher score one gets on PC1, the more frequent and regular this person exercises and includes a lot of jumping activities in the workout. In this case, we think people with high PC1 score can easily do more jumps in one minute, thus getting a high score on jumping.
+#We think cluster is not optimal for prediction because of the inconsistency between the number of jumps and the movement and the existence of an abnormal. The cluster(4) with the highest average number of jumps, 125, has slightly larger movement than the cluster(2) which has lower average number of jumps, 86, but with the least movement. The cluster(3) that is abnormal includes only one person who jumps 105 times with quite large movement, especially in back and forth and left and right direction.      
+
+#Visualization
+V3 <- V3[-c(6), ]
+V3 <- cbind(rownames(V3), data.frame(V3, row.names=NULL))
+names(V3)[1] <- "Name"
+Taks2_outcomes <- mutate(Taks2_outcomes, Name = c("Sara V", "Jingshu Zhang", "Yurui Wang", "Yuan Chang", "Manrui Zhang", "Xingyi Xie", "Jie Yao"))
+V4 <- merge(V3[, 1:2], Taks2_outcomes[, -2], by = "Name")
+library(GGally)
+ggpairs(V4, 2:4, progress = FALSE)
+ggplot(V4, aes(PC1, Jumps, col = .cluster)) + geom_point()
+
+#Intervention:To better the performance, one can 1)exercise more often, and 2)try to make less movement when jumping.
+```
+
